@@ -1,0 +1,326 @@
+<head>
+  <title>Frugal Book</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="static/favicon_Final.png" />
+  <!-- Global Site Tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107289226-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments)};
+    gtag('js', new Date());
+
+    gtag('config', 'UA-107289226-1');
+  </script>
+</head>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="static/aesthetics.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:600" rel="stylesheet">
+
+<script>
+  var rowNum;
+  var parsed =
+  [
+  {"_id":"59a8d3d3734d1d25a0f4cc6a","Title":"Computer Systems: A Programmer's Perspective","ISBN":"9780134092669","imageURL":"http://ecx.images-amazon.com/images/I/41AoUQujOCL._SX258_BO1,204,203,200_.jpg","PDFLink":"http://b-ok.org/book/2611328/81a8ab"},
+  {"_id":"59a95ac2734d1d25a0f51240","Title":"C Primer Plus","ISBN":"9780321928429","imageURL":"https://images-na.ssl-images-amazon.com/images/I/414k2SsrJdL._AC_UL320_SR242,320_.jpg","PDFLink":"http://lshoshia.science.tsu.ge/C/Stephen%20Prata%20C%20Primer%20Plus%20%202013.pdf"},
+  {"_id":"59a98517734d1d25a0f5303c","Title":"A Practical Guide to Linux Commands, Editors, and Shell Programming","ISBN":"9780131367364","imageURL":"http://images.pearsoned-ema.com/jpeg/large/9780131367364.jpg","PDFLink":"http://www.nehruelearning.in/images/699/LinuxBook_A_Practical_Guide_to_Linux.pdf"},
+  {"_id":"59a98917734d1d25a0f53377","Title":"Discrete Mathematics with Applications","ISBN":"9780495391326","imageURL":"https://images-na.ssl-images-amazon.com/images/I/41%2Bzl9fgEML._SX431_BO1,204,203,200_.jpg","PDFLink":"http://www.medellin.unal.edu.co/~curmat/matdiscretas/doc/Epp.pdf"},
+  {"_id":"59a989a8734d1d25a0f5339e","Title":"Calculus Early Transcendentals","ISBN":"9781285741550","imageURL":"https://images-na.ssl-images-amazon.com/images/I/51Lq65oVveL._SX385_BO1,204,203,200_.jpg","PDFLink":"http://phys114.tk/01%20-%20Textbooks/Calculus%20Early%20Transcendentals%208th%20Ed%20%5B2015%5D.pdf"},
+  {"_id":"59aa3554734d1d25a0f57e98","Title":"Product Design and Development","ISBN":"9780078029066","imageURL":"https://images-na.ssl-images-amazon.com/images/I/519KDX0FfdL._SX397_BO1,204,203,200_.jpg","PDFLink":"https://libgen.pw/item/adv/5a1f058c3a044650f51250b8"},
+  {"_id":"59ab12a8734d1d25a0f5bb71","Title":"Chemistry the Molecular Nature of Matter and Change","ISBN":"9780021442546","imageURL":"https://images-na.ssl-images-amazon.com/images/I/51NWZM7hRBL._SX388_BO1,204,203,200_.jpg","PDFLink":"https://chemistrythemolecularnatureofmatterandchange7thed.wordpress.com/"},
+  {"_id":"59ab1530734d1d25a0f5bc10","Title":"Objects First with Java","ISBN":"9780132492669","imageURL":"https://www.pearsonhighered.com/assets/bigcovers/0/1/3/2/0132492660.jpg","PDFLink":"http://b-ok.org/book/2270606/1b37ff"},
+  {"_id":"59ab15db734d1d25a0f5bc21","Title":"Starting out with C++ From Control Structures Through Objects","ISBN":"9780133769395","imageURL":"https://www.pearsonhighered.com/assets/bigcovers/0/1/3/3/0133769399.jpg","PDFLink":"http://www.syl9.com/csci193/Notes/193eigth.pdf"},
+  {"_id":"59ab167a734d1d25a0f5bc38","Title":"Elementary Differential Equations","ISBN":"9780132397308","imageURL":"https://www.pearsonhighered.com/assets/bigcovers/0/1/3/6/0136006132.jpg","PDFLink":"http://users.math.cas.cz/~eisner/lock/UMB-572/knihy/C._Henry_Edwards,_David_E._Penney_Elementary_Differential_Equations_-6th_Edition-_Prentice_Hall_pp648.pdf"},
+  {"_id":"59c50b6b734d1d41c81400a1","Title":"Logic & Computer Design Fundamentals","ISBN":"9780133760637","imageURL":"https://images-na.ssl-images-amazon.com/images/I/5114lAXkKnL._SX378_BO1,204,203,200_.jpg","PDFLink":"https://libgen.pw/item/adv/5a1f05653a044650f5102ef8"},
+  {"_id":"59c50bfb734d1d41c81400d5","Title":"Principles and Applications of Electrical Engineering","ISBN":"9780073220338","imageURL":"https://images-na.ssl-images-amazon.com/images/I/51Jy8GYIcOL._SX398_BO1,204,203,200_.jpg","PDFLink":"http://library.aceondo.net/ebooks/Technical_Education/Engineering_Principles_and_Applications_of_Electrical_Engineering_.pdf"},
+  {"_id":"59c6d49b734d1d72c63020d5","Title":"Physics for Scientists and Engineers: A Strategic Approach (With Modern Physics)","ISBN":"9780321740908","imageURL":"https://images-na.ssl-images-amazon.com/images/I/41rhl25Z1JL._SX391_BO1,204,203,200_.jpg","PDFLink":"http://dlx.b-ok.org/genesis/1284000/e907fb6b86c7b9aaefcb111f706fae36/_as/[Randall_D._Knight]_Physics_for_Scientists_and_Eng(b-ok.org).pdf"},
+  {"_id":"59c6d577734d1d72c630214e","Title":"Introduction to Management Science","ISBN":"9780132751919","imageURL":"https://images-na.ssl-images-amazon.com/images/I/41bv4esxoVL._SX378_BO1,204,203,200_.jpg","PDFLink":"https://libgen.pw/item/adv/5a1f052d3a044650f50ca346"},
+  {"_id":"59c6d8fa734d1d72c6302235","Title":"Microeconomics: A Contemporary Introduction","ISBN":"9781305631946","imageURL":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/lrg/9781/3056/9781305631946.jpg","PDFLink":"http://dlx.b-ok.org/genesis/1551000/f637e4b14313ec8ef36f3d46f43fec95/_as/[William_A._McEachern]_ECON_MICRO(b-ok.org).pdf"},
+  {"_id":"59c6d9ab734d1d72c630224b","Title":"Personal Finance: Turning Money into Wealth","ISBN":"9780132719162","imageURL":"https://images-na.ssl-images-amazon.com/images/I/41TqUxVFm-L._SX350_BO1,204,203,200_.jpg","PDFLink":"http://libgen.io/ads.php?md5=E468C7273B6A704DC08666F88ED40E31"},
+  {"_id":"59c6de65734d1d72c6302391","Title":"Numerical Optimization","ISBN":"9780387303031","imageURL":"http://users.iems.northwestern.edu/~nocedal/images/cover-m.gif","PDFLink":"http://b-ok.org/book/636233/964ecf"},
+  {"_id":"59c6da59734d1d72c6302281","Title":"Business Law and the Legal Environment","ISBN":"9781111530600","imageURL":"https://images-na.ssl-images-amazon.com/images/I/51Q%2BNAhvJGL._SX423_BO1,204,203,200_.jpg","PDFLink":"http://libgen.io/ads.php?md5=740E64BCE98E09040797AF103821253F"},
+  {"_id":"59c6dbb7734d1d72c63022e9","Title":"Genetics : A Conceptual Approach","ISBN":"9781464109461","imageURL":"http://prod-cat-files.macmillan.cloud/MediaResources/Jackets/high_res/9781464109461.jpg","PDFLink":"https://libgen.pw/item/adv/5a1f05a03a044650f5133169"},
+  {"_id":"59c6dc32734d1d72c63022f9","Title":"Statistics for Engineers and Scientists","ISBN":"9780073401331","imageURL":"https://images-na.ssl-images-amazon.com/images/I/41ej0bFdv8L._SX402_BO1,204,203,200_.jpg","PDFLink":"http://libgen.io/ads.php?md5=9DCE20038C032C57F4522EF6A29B5BEB"},
+  {"_id":"59c6dd1d734d1d72c630232c","Title":"Discrete Inverse Problems: Insight and Algorithms","ISBN":"9780898716962","imageURL":"https://images-na.ssl-images-amazon.com/images/I/41AP0YPUi7L._SX350_BO1,204,203,200_.jpg","PDFLink":"http://dlx.b-ok.org/genesis/1496000/5c29852b0536b7b3ff3967843f1e778f/_as/[Per_Christian_Hansen]_Discrete_Inverse_Problems_(b-ok.org).pdf"},
+  {"_id":"59c6dda9734d1d72c630236f","Title":"A First Course in Numerical Methods","ISBN":"9780898719970","imageURL":"https://rukminim1.flixcart.com/image/704/704/book/8/6/4/a-first-course-in-numerical-methods-original-imadgb4hcvfzjaqa.jpeg?q=70","PDFLink":"http://dlx.b-ok.org/genesis/1195000/73f2e4b06b6b210e85a394b43a85237a/_as/[Uri_M._Ascher,_Chen_Greif]_A_First_Course_in_Nume(b-ok.org).pdf"},
+  {"_id":"59c6deca734d1d72c630239f","Title":"Intermediate Microeconomics: A Modern Approach","ISBN":"9780393123975","imageURL":"https://images-na.ssl-images-amazon.com/images/I/51WvINzNQAL._SX423_BO1,204,203,200_.jpg","PDFLink":"http://dlx.b-ok.org/genesis/1530000/358e73a2ed68128069b8749d4644e633/_as/[Hal_R._Varian]_Intermediate_Microeconomics_A_Mod(b-ok.org).pdf"},
+  {"_id":"59c6dfa7734d1d72c63023d2","Title":"Fundamentals of Engineering Thermodynamics","ISBN":"9781118412930","imageURL":"https://images-na.ssl-images-amazon.com/images/I/51Lgi7MzbfL._SX342_QL70_.jpg","PDFLink":"http://dlx.b-ok.org/genesis/1359000/6f944b8ab6e5b46c2610bc066cabc7e7/_as/[Michael_J._Moran,_Howard_N._Shapiro,_Daisie_D._Bo(b-ok.org).pdf"},
+  {"_id":"59c6e01f734d1d72c63023e9","Title":"Fundamentals of Fluid Mechanics","ISBN":"9781119080701","imageURL":"https://images-na.ssl-images-amazon.com/images/I/51KIlur7dzL._SX384_BO1,204,203,200_.jpg","PDFLink":"http://dlx.b-ok.org/genesis/1556000/fcd2af06dd395e9a8015fca6023e31d9/_as/[Munson,_Young_and_Okiishi]_Fundamentals_of_Fluid_(b-ok.org).pdf"},
+  {"_id":"59c6e077734d1d72c63023f0","Title":"Financial Accounting: Tools for Business Decision Making","ISBN":"9781118162286","imageURL":"http://media.wiley.com/product_data/coverImage300/49/EHEP0025/EHEP002549.jpg","PDFLink":"http://b-ok.org/book/2728388/86fe2b"},
+  {"_id":"59c6e0ed734d1d72c630240c","Title":"The Start-up of You: Adapt to the Future, Invest in Yourself, and Transform Your Career","ISBN":"9780307888907","imageURL":"https://images.gr-assets.com/books/1328301968l/12030438.jpg","PDFLink":"http://libgen.io/ads.php?md5=94CDA4A09BABB720A0FC73C8BB08E2C9"},
+  {"_id":"59c6e12a734d1d72c630241e","Title":"Exploring the Practice of Statistics","ISBN":"9781464141041","imageURL":"https://images-na.ssl-images-amazon.com/images/I/51WYibD8QhL._SX426_BO1,204,203,200_.jpg","PDFLink":"https://libgen.pw/item/adv/5a1f058c3a044650f51240a5"},
+  {"_id":"59c6f799734d1d72c6302831","Title":"Applied Combinatorics","ISBN":"9780470458389","imageURL":"https://images-na.ssl-images-amazon.com/images/I/512YTy9zv2L._SY445_QL70_.jpg","PDFLink":"https://archive.org/stream/AppliedCombinatorics6thEditionByAlanTucker2012PDF/Applied%20Combinatorics%20%286th%20Edition%29%20by%20Alan%20Tucker%202012%20PDF#page/n0/mode/2up"},
+  {"_id":"59c6faf4734d1d72c6302894","Title":"Engineering Mechanics: Statics","ISBN":"9781118807330","imageURL":"http://media.wiley.com/product_data/coverImage300/97/EHEP0031/EHEP003197.jpg","PDFLink":"http://libgen.io/ads.php?md5=38DF9DC47311165AD0FDE285186077B5"},
+  {"_id":"59c72601734d1d72c63030b4","Title":"Engineering Economy","ISBN":"9780133750218","imageURL":"https://images-na.ssl-images-amazon.com/images/I/817fR1YCKhL.jpg","PDFLink":"https://libgen.pw/item/adv/5a1f05603a044650f50fcb8c"},
+  {"_id":"59c7260d734d1d72c63030b9","Title":"Food Science","ISBN":"9781461372639","imageURL":"https://pictures.abebooks.com/isbn/9781461372639-us.jpg","PDFLink":"http://b-ok.org/book/2248460/601d68"},
+  {"_id":"59c72616734d1d72c63030c2","Title":"The Romans: An Introduction","ISBN":"9780415458252","imageURL":"https://images-na.ssl-images-amazon.com/images/I/515XH%2BdPLHL._SX331_BO1,204,203,200_.jpg","PDFLink":"http://b-ok.org/book/612221/9ae4e8"},
+  {"_id":"59c72620734d1d72c63030c8","Title":"Anthology of Classical Myth","ISBN":"9780872207219","imageURL":"https://images-na.ssl-images-amazon.com/images/I/51MPmhgbVxL._SX332_BO1,204,203,200_.jpg","PDFLink":"http://b-ok.org/ireader/1204141"},
+  {"_id":"59c72640734d1d72c63030ca","Title":"Engineering Mechanics, Statics","ISBN":"9780471406464","imageURL":"https://images-na.ssl-images-amazon.com/images/I/517GWXE8Y8L._SX366_BO1,204,203,200_.jpg","PDFLink":"http://b-ok.org/book/1249467/96bf0a"},
+  {"_id":"59c72651734d1d72c63030d1","Title":"Statics and Mechanics of Materials","ISBN":"9780073380155","imageURL":"https://images-na.ssl-images-amazon.com/images/I/51zgW59wLGL._SX410_BO1,204,203,200_.jpg","PDFLink":"https://libgen.pw/item/adv/5a1f04d73a044650f5067d00"},
+  {"_id":"59c7265c734d1d72c63030d5","Title":"Microelectronics Circuit Analysis and Design","ISBN":"9780073380643","imageURL":"https://images-na.ssl-images-amazon.com/images/I/41maQJUnTzL._SX399_BO1,204,203,200_.jpg","PDFLink":"https://libgen.pw/item/adv/5a1f058c3a044650f5124b14"},
+  {"_id":"59c72666734d1d72c63030d7","Title":"Make: Action: Movement, Light, and Sound with Arduino and Raspberry Pi","ISBN":"9781457187797","imageURL":"https://i1.wp.com/simonmonk.org/wp-content/uploads/2016/03/cover.jpg","PDFLink":"http://b-ok.org/book/2658849/22aa67"},
+  {"_id":"59c72670734d1d72c63030d8","Title":"Electrical Engineering: Principles & Applications","ISBN":"9780133116649","imageURL":"https://images-na.ssl-images-amazon.com/images/I/61GfDjGRVJL._SX388_BO1,204,203,200_.jpg","PDFLink":"http://libgen.io/ads.php?md5=88D2880A6DEB0314774A472F8652E923"},
+  {"_id":"59c7267a734d1d72c63030d9","Title":"Chemical, Biochemical, and Engineering Thermodynamics","ISBN":"9780471661740","imageURL":"https://images-na.ssl-images-amazon.com/images/I/51T8p0uQDzL._SX334_BO1,204,203,200_.jpg","PDFLink":"http://b-ok.org/book/2293946/69fa68"},
+  {"_id":"59c72684734d1d72c63030da","Title":"Separation Process Engineering: Includes Mass Transfer Analysis","ISBN":"9780131382275","imageURL":"https://images-na.ssl-images-amazon.com/images/I/41FUjWV08PL._SX374_BO1,204,203,200_.jpg","PDFLink":"http://b-ok.org/book/2039903/f12ed1"},
+  {"_id":"59c72692734d1d72c63030db","Title":"Elementary Principles of Chemical Processes","ISBN":"9780471687573","imageURL":"https://pictures.abebooks.com/isbn/9780471687573-us.jpg","PDFLink":"http://b-ok.org/book/905936/0c8e19"},
+  {"_id":"59c726ce734d1d72c63030e5","Title":"Introduction to Environmental Engineering and Science","ISBN":"9780131481930","imageURL":"https://img.valorebooks.com/FULL/97/9780/978013/9780131481930.jpg","PDFLink":"https://libgen.pw/item/adv/5a1f05a83a044650f5139281"},
+  {"_id":"59c726db734d1d72c63030e6","Title":"Concepts in Enterprise Resource Planning","ISBN":"9781111820398","imageURL":"https://pictures.abebooks.com/isbn/9781111820398-us.jpg","PDFLink":"http://b-ok.org/book/2289646/51e8fd"},
+  {"_id":"59c726e7734d1d72c63030ef","Title":"Introduction to Flight","ISBN":"9780078027673","imageURL":"https://pictures.abebooks.com/isbn/9780072825695-us.jpg","PDFLink":"https://www.academia.edu/7950378/Introduction_to_Flight_-_Anderson_5th_Ed._"},
+  {"_id":"59c726f2734d1d72c63030f0","Title":"Anatomy and Physiology of Domestic Animals","ISBN":"9781118356388","imageURL":"https://images-na.ssl-images-amazon.com/images/I/51keMADHnEL._SX384_BO1,204,203,200_.jpg","PDFLink":"https://archive.org/details/AnatomyAndPhysiologyOfDomesticAnimals"},
+  {"_id":"59c726fc734d1d72c63030f2","Title":"Microeconomics","ISBN":"9781429283427","imageURL":"https://images-na.ssl-images-amazon.com/images/I/61hCkZMxGOL._SX396_BO1,204,203,200_.jpg","PDFLink":"https://libgen.pw/item/adv/5a1f054d3a044650f50eaf69"},
+  {"_id":"59c72707734d1d72c63030f3","Title":"Republic (Hackett Classics)","ISBN":"9780872201361","imageURL":"https://pictures.abebooks.com/isbn/9780872201361-us.jpg","PDFLink":"http://b-ok.org/book/816152/597aad"},
+  {"_id":"59c72711734d1d72c63030f5","Title":"Politics","ISBN":"9780872203884","imageURL":"https://images-na.ssl-images-amazon.com/images/I/31wOOLn1TOL._SX322_BO1,204,203,200_.jpg","PDFLink":"http://b-ok.org/book/1182258/b7481c"},
+  {"_id":"59c7271b734d1d72c63030fc","Title":"The Tragedy of Political Science: Politics, Scholarship, and Democracy","ISBN":"9780300037609","imageURL":"https://images-na.ssl-images-amazon.com/images/I/31LAJ6tTKUL._SX326_BO1,204,203,200_.jpg","PDFLink":"http://b-ok.org/book/2615316/2b7d28"},
+  {"_id":"59c72726734d1d72c63030fd","Title":"The Conduct of Inquiry in International Relations","ISBN":"9780415776271","imageURL":"https://images-na.ssl-images-amazon.com/images/I/51EeVx70SCL._SX332_BO1,204,203,200_.jpg","PDFLink":"http://b-ok.org/book/834036/b58560"},
+  {"_id":"59c72733734d1d72c63030fe","Title":"Between the World and Me","ISBN":"9780812993547","imageURL":"https://images-na.ssl-images-amazon.com/images/I/61u2if1xm%2BL.jpg","PDFLink":"https://www.mercerislandschools.org/cms/lib3/WA01001855/Centricity/Domain/640/Ta-Nehisi%20Coates%20PDF.pdf"},
+  {"_id":"59c7273d734d1d72c6303100","Title":"The Logic of American Politics","ISBN":"9781452276496","imageURL":"https://images-na.ssl-images-amazon.com/images/I/51mqkZjknDL._SX415_BO1,204,203,200_.jpg","PDFLink":"https://libgen.pw/item/adv/5a1f054a3a044650f50e8b12"},
+  {"_id":"59c72761734d1d72c6303101","Title":"Introduction to Nuclear Engineering","ISBN":"9780201824988","imageURL":"https://images-na.ssl-images-amazon.com/images/I/41GM0RCG6AL._SX355_BO1,204,203,200_.jpg","PDFLink":"http://b-ok.org/book/718026/8a18a7"},
+  {"_id":"59c7276c734d1d72c6303102","Title":"Materials Science and Engineering: An Introduction","ISBN":"9781118324578","imageURL":"https://images-na.ssl-images-amazon.com/images/I/51qM7DezI2L._SX388_BO1,204,203,200_.jpg","PDFLink":"http://b-ok.org/book/2462012/66141c"},
+  {"_id":"59c72775734d1d72c6303103","Title":"Mechanical Behavior of Materials","ISBN":"9780131395060","imageURL":"https://images-na.ssl-images-amazon.com/images/I/51CqOISxnkL._SX381_BO1,204,203,200_.jpg","PDFLink":"https://libgen.pw/item/adv/5a1f05593a044650f50f5fa8"},
+  {"_id":"59c7277f734d1d72c6303109","Title":"Data Structures and Algorithm Analysis in Java","ISBN":"9780132576277","imageURL":"https://images-na.ssl-images-amazon.com/images/I/51En%2BB0E1GL._SX377_BO1,204,203,200_.jpg","PDFLink":"http://www.kitabxana.net/files/books/file/1354098277.pdf"},
+  {"_id":"59c72b14734d1d72c63031a3","Title":"Boundary Layer Analysis","ISBN":"9781600867712","imageURL":"https://images-na.ssl-images-amazon.com/images/I/512uqPDSrDL._SX387_BO1,204,203,200_.jpg","PDFLink":"https://libgen.pw/download.php?id=1007167"},
+  {"_id":"59c72ec9734d1d72c630328c","Title":"Essentials of Information Systems for Managers","ISBN":"9781118057117","imageURL":"https://images-na.ssl-images-amazon.com/images/I/51q4E0nttzL._SX403_BO1,204,203,200_.jpg","PDFLink":"http://b-ok.org/book/2270093/9a14cc"},
+  {"_id":"59d5a613734d1d08b4e638a5","Title":"Fresh Fruit, Broken Bodies: Migrant Farmworkers in the United States","ISBN":"N/A","imageURL":"http://allegralaboratory.net/wp-content/uploads/2016/03/9780520275140.jpg","PDFLink":"https://libgen.pw/item/adv/5a1f05883a044650f51218d1"},
+  {"_id":"59d5a696734d1d08b4e638b5","Title":"Psychology: Themes and Variations","ISBN":"9781111354749","imageURL":"https://images-na.ssl-images-amazon.com/images/I/61iEYYAaSkL._SX412_BO1,204,203,200_.jpg","PDFLink":"http://b-ok.org/book/2072381/2da03f"},
+  {"_id":"59d5ae09734d1d08b4e63aa0","Title":"Cost Accounting","ISBN":"9780133428704","imageURL":"https://www.pearsonhighered.com/assets/bigcovers/0/1/3/3/0133803813.jpg","PDFLink":"https://www.academia.edu/28108834/Cost_Accounting_15th_Edition_by_Charles_T._Horngren_and_Others.pdf.PDF"},
+  {"_id":"59d5b01d734d1d08b4e63b52","Title":"Elementary Differential Equations","ISBN":"9780470458327","imageURL":"http://media.wiley.com/product_data/coverImage300/52/EHEP0024/EHEP002452.jpg","PDFLink":"http://b-ok.org/book/2089161/085bfb"},
+  {"_id":"59d5b12d734d1d08b4e63c09","Title":"Linear Algebra with Applications","ISBN":"9780716786672","imageURL":"https://images-na.ssl-images-amazon.com/images/I/51SDLVN1eeL._SX368_BO1,204,203,200_.jpg","PDFLink":"https://libgen.pw/item/adv/5a1f04f53a044650f508dae4"},
+  {"_id":"59d5b2bc734d1d08b4e63c94","Title":"Probability and Statistics for Engineering and the Sciences","ISBN":"9781305251809","imageURL":"https://images-na.ssl-images-amazon.com/images/I/51jbedGNjIL._SX397_BO1,204,203,200_.jpg","PDFLink":"http://b-ok.org/book/2593293/3eebfa"},
+  {"_id":"59d5b482734d1d08b4e63d73","Title":"Partial Differential Equations for Scientists and Engineers","ISBN":"9780486676203","imageURL":"https://images.gr-assets.com/books/1328862673l/164585.jpg","PDFLink":"http://b-ok.org/book/2712348/7058dd"},
+  {"_id":"59d5b52a734d1d08b4e63dd5","Title":"Using R for Introductory Statistics","ISBN":"9781466590731","imageURL":"https://images-na.ssl-images-amazon.com/images/I/41LtpLFMOzL._SX328_BO1,204,203,200_.jpg","PDFLink":"http://b-ok.org/book/2533481/05662a"},
+  {"_id":"59d5b650734d1d08b4e63eab","Title":"Advanced Engineering Mathematics","ISBN":"9780133214314","imageURL":"https://images-na.ssl-images-amazon.com/images/I/51ABY15P1DL._SX378_BO1,204,203,200_.jpg","PDFLink":"https://github.com/tygao/f15-06623/blob/master/Greenberg%20-%20Advanced%20Engineering%20Mathematics%20(2nd%20Ed.).pdf"},
+  {"_id":"59d62ef4734d1d08b4e68223","Title":"Nonlinear Dynamics And Chaos","ISBN":"9780738204536","imageURL":"https://images-na.ssl-images-amazon.com/images/I/51kbcyGwe5L._SX322_BO1,204,203,200_.jpg","PDFLink":"http://b-ok.org/book/851344/138ded"},
+  {"_id":"59d631d9734d1d08b4e684ae","Title":"Financial Accounting: An Introduction to Concepts, Methods and Uses","ISBN":"9781133366171","imageURL":"https://images-na.ssl-images-amazon.com/images/I/51Baira-uxL._AC_UL320_SR238,320_.jpg","PDFLink":"http://b-ok.org/book/2316196/710715"},
+  {"_id":"59d632c7734d1d08b4e68654","Title":"Managerial Accounting: Creating Value in a Dynamic Business Environment","ISBN":"9780078025662","imageURL":"https://images-na.ssl-images-amazon.com/images/I/51DK81M4SKL._SX389_BO1,204,203,200_.jpg","PDFLink":"https://libgen.pw/item/adv/5a1f055d3a044650f50fb689"},
+  {"_id":"59d633ad734d1d08b4e686fb","Title":"Guide to Managerial Communication","ISBN":"9780132971331","imageURL":"https://images-na.ssl-images-amazon.com/images/I/510KvQF8dIL._SX339_BO1,204,203,200_.jpg","PDFLink":"https://libgen.pw/item/adv/5a1f056a3a044650f51087a7"},
+  {"_id":"59d634e7734d1d08b4e687cf","Title":"Business Statistics for Competitive Advantage with Excel 2016","ISBN":"9783319321844","imageURL":"https://images-na.ssl-images-amazon.com/images/I/418GUdK91UL._SX384_BO1,204,203,200_.jpg","PDFLink":"http://b-ok.org/book/2802848/289a54"},
+  {"_id":"59d63684734d1d08b4e68977","Title":"Intermediate Accounting","ISBN":"9781118147290","imageURL":"https://images-na.ssl-images-amazon.com/images/I/41CLiAwTkwL._SX388_BO1,204,203,200_.jpg","PDFLink":"http://b-ok.org/book/2032170/9da37b"},
+  {"_id":"59d637c2734d1d08b4e68a0d","Title":"Managing the Non-Profit Organization ","ISBN":"9780750626910","imageURL":"https://pictures.abebooks.com/isbn/9780750626910-us.jpg","PDFLink":"http://b-ok.org/book/2364359/f3f5f1"},
+  {"_id":"59d638c8734d1d08b4e68a8a","Title":"The Design of Everyday Things","ISBN":"9780465050659","imageURL":"https://images-na.ssl-images-amazon.com/images/I/51tV6QtKX0L.jpg","PDFLink":"http://libgen.io/ads.php?md5=47E1C2279EDF4D95C2776F9BE11C781D"},
+  {"_id":"59d639bd734d1d08b4e68b6d","Title":"Foundations Of Algorithms","ISBN":"9781284049190","imageURL":"https://images-na.ssl-images-amazon.com/images/I/61xMoI2aRgL._SX403_BO1,204,203,200_.jpg","PDFLink":"https://libgen.pw/item/adv/5a1f054a3a044650f50e75e8"},
+  {"_id":"59d63ab7734d1d08b4e68be8","Title":"Computer Networking: A Top-Down Approach","ISBN":"9780132856201","imageURL":"https://www.pearsonhighered.com/assets/bigcovers/0/1/3/2/0132856204.jpg","PDFLink":"http://web.csulb.edu/~rlaster/docs/cecs572.pdf"},
+  {"_id":"59d63bd2734d1d08b4e68d0d","Title":"History of the American Economy","ISBN":"9781111822927","imageURL":"https://images-na.ssl-images-amazon.com/images/I/51YeD4zG1mL._SX398_BO1,204,203,200_.jpg","PDFLink":"https://libgen.pw/item/adv/5a1f05053a044650f50a1e33"},
+  {"_id":"59d63c85734d1d08b4e68d8b","Title":"Microeconomics","ISBN":"9781118572276","imageURL":"http://media.wiley.com/product_data/coverImage300/19/EHEP0029/EHEP002919.jpg","PDFLink":"http://b-ok.org/book/2270767/a25662"},
+  {"_id":"59d66b41734d1d08b4e6b218","Title":"Microeconomics and Behavior","ISBN":"9780078021695","imageURL":"https://images-na.ssl-images-amazon.com/images/I/41jolRLmQRL._SX365_BO1,204,203,200_.jpg","PDFLink":"https://bwfitri.files.wordpress.com/2016/03/microeconomics-and-behavior-frank.pdf"},
+  {"_id":"59d66cd3734d1d08b4e6b354","Title":"Economics of Agricultural Development","ISBN":"9780415494243","imageURL":"https://images-na.ssl-images-amazon.com/images/I/51Pg2XJVCyL._SX332_BO1,204,203,200_.jpg","PDFLink":"http://b-ok.org/book/1234989/5016f5"},
+  {"_id":"59d66df3734d1d08b4e6b41d","Title":"Real Estate Law","ISBN":"9780324655209","imageURL":"https://images-na.ssl-images-amazon.com/images/I/51wRd3m2SuL._SX258_BO1,204,203,200_.jpg","PDFLink":"http://b-ok.org/book/1236782/d93d29"},
+  {"_id":"59d672d9734d1d08b4e6b91e","Title":"A Short History of Nearly Everything","ISBN":"9780767908184","imageURL":"https://images-na.ssl-images-amazon.com/images/I/41FqKW0PerL._SX329_BO1,204,203,200_.jpg","PDFLink":"http://www.huzheng.org/bookstore/AShortHistoryofNearlyEverything.pdf"},
+  {"_id":"59d67615734d1d08b4e6bc3d","Title":"Earth: An Introduction to Physical Geology","ISBN":"9780134182599","imageURL":"https://www.pearsonhighered.com/assets/bigcovers/0/1/3/4/0134074254.jpg","PDFLink":"http://libgen.io/ads.php?md5=171CD5FDF0120F7AB14DD916C983C1CC"},
+  {"_id":"59d67705734d1d08b4e6bcd3","Title":"Modern Mathematical Statistics with Applications","ISBN":"9781461403906","imageURL":"https://images-na.ssl-images-amazon.com/images/I/41y85TGbiBL._SX359_BO1,204,203,200_.jpg","PDFLink":"https://libgen.pw/item/adv/5a1f04e53a044650f507b058"},
+  {"_id":"59e249db734d1d1c37fc7e27","Title":"Discrete Mathematics with Ducks","ISBN":"9781466504998","imageURL":"https://images.tandf.co.uk/common/jackets/amazon/978146650/9781466504998.jpg","PDFLink":"http://b-ok.org/book/2333764/a8321b"}
+  ];
+
+  var checkedClear = false;
+  var moneySaved = 0;
+  parsed.sort(function(a, b){
+    if(a.Title > b.Title) {
+        return 1;
+    } else if(a.Title < b.Title) {
+        return -1;
+    } else {
+      return 0;
+    }
+  });
+
+  function checkNumRows(x) {
+    if(x.length % 3 != 0) {
+      makeRows((x.length / 3) + 1);
+    } else {
+      makeRows(x.length / 3);
+    }
+  }
+
+  function makeRows(x) {
+    var j = 1;
+    for(var i = 1; i <= x; i++) {
+      if(i > 1) {
+        j = j + 3;
+      }
+      rowNum = "row" + i;
+      $(".container-fluid").append("<div id = '" + rowNum + "' class = 'row'></div>");
+      makeSpaces(rowNum, j);
+    }
+  };
+
+  function makeSpaces(x, y) {
+    for(var i = 0; i < 3; i++) {
+      var spaceNum = "space" + (y + i);
+      $("#"+x).append("<div id = '" + spaceNum + "' class='col-md-4'></div>");
+    }
+  };
+
+  function makeEntries(a, x, y, z) {
+    $("#space" + a).append("<a id='" + x + "' href='#' target='_blank'></a>");
+    $("#" + x).append("<img id= '" + y  + "' class='textbookImage' src= #>");
+    $("#" + x).append("<h3 id='" + z + "' class='textBookInfo text-center'></h3>");
+  };
+
+  function makeAttr(x) {
+    var pdfLinkAttr = "link" + (x + 1);
+    var imageLinkAttr = "pic" + (x + 1);
+    var titleAttr = "text" + (x + 1);
+    makeEntries((x + 1), pdfLinkAttr, imageLinkAttr, titleAttr);
+    $("#" + pdfLinkAttr).prop("href", parsed[x].PDFLink);
+    $("#" + imageLinkAttr).attr("src", parsed[x].imageURL);
+    $("#" + titleAttr).text(parsed[x].Title);
+  }
+
+  function makeFormBox() {
+    $(".contactSection").append("<h4 style = 'padding-top: 15px'>Broken Link? Can't Find Your Textbook? Contact Us!</h4>");
+    $(".contactSection").append("<form method = 'POST' action = 'http://formspree.io/frugalbookrequests@gmail.com'></form>");
+    $("form").append("<input class = 'emailBox' type ='email' name = 'email' placeholder = 'Your email'>");
+    $("form").append("<div style = 'padding: 10px'><textarea class = 'messageBox' name = 'message' placeholder = 'Message'></textarea></div>");
+    $("form").append("<button type = 'submit' class = 'button text-center'>Send</button>");
+  }
+
+  function seeIfClear() {
+    var searchTerm = $('input').val().toLowerCase();
+    var changedTerm = false;
+    setTimeout(function() {
+      var searchTermNew = $('input').val().toLowerCase();
+      if(searchTerm != searchTermNew) {
+        changedTerm = true;
+      }
+      if(searchTerm === '' && checkedClear === false) {
+        $(".row").remove();
+        $("h5").remove();
+        $(".col-md-4").remove();
+        $('#theSearch').prop('disabled', false);
+        checkNumRows(parsed);
+        for(var i = 0; i < parsed.length; i++) {
+          makeAttr(i);
+          $(".col-md-4").addClass("animated fadeInUp");
+          $(".h3").addClass("animated slideInDown");
+          checkedClear = true;
+        }
+      }
+    }, 200);
+  }
+
+  function searchByISBN(x) {
+    var numMatch = 0;
+    var count = 1;
+    var i = 0;
+    while(i <= parsed.length) {
+      var title = "#text" + count;
+      var pdfLink = "#link" + count;
+      var imageLink = "#pic" + count;
+      var tempI = i;
+      if(i == parsed.length) {
+        i = 0;
+      }
+      if(parseInt(parsed[i].ISBN) == x) {
+        $(title).text(parsed[i].Title);
+        $(pdfLink).prop("href", parsed[i].PDFLink);
+        $(imageLink).attr("src", parsed[i].imageURL);
+        numMatch++;
+        $(title).addClass('animated fadeIn');
+        $(imageLink).addClass('animated fadeIn');
+        count++;
+      }
+      i = tempI;
+      i++;
+    }
+    removeSpaces(numMatch);
+  }
+
+  function searchByTitle(x) {
+    var numMatch = 0;
+    var matchedTitles = [];
+    for(var i = 0; i < parsed.length; i++) {
+      var title = "#text" + (i + 1);
+      var pdfLink = "#link" + (i + 1);
+      var imageLink = "#pic" + (i + 1);
+      if((parsed[i].Title.toLowerCase()).indexOf(x) > -1) {
+        matchedTitles[numMatch] = i;
+        numMatch++;
+      }
+    }
+    addMatchedSpaces(numMatch, matchedTitles);
+    removeSpaces(numMatch);
+  }
+
+  function addMatchedSpaces(x, y) {
+    $(".row").remove();
+    checkNumRows(y);
+    for(var i = 0; i < y.length; i++) {
+      makeAttr(i);
+      changeSpace((i + 1), parsed[y[i]].Title, parsed[y[i]].PDFLink, parsed[y[i]].imageURL);
+    }
+  }
+
+  function changeSpace(x, y, z, a) {
+    var changedTitle = "#text" + x;
+    var changedPDFLink = "#link" + x;
+    var changedImageLink = "#pic" + x;
+    $(changedTitle).text(y);
+    $(changedPDFLink).prop("href", z);
+    $(changedImageLink).attr("src", a);
+    $(changedTitle).addClass('animated fadeIn');
+    $(changedImageLink).addClass('animated fadeIn');
+  }
+
+  function removeSpaces(x) {
+    if(x == 0) {
+      $(".row").remove();
+      $(".container-fluid").append("<h5>Oops! We couldn't find that title. Try again.</h5>");
+      $("#theSearch").prop('disabled', true);
+    } else {
+      for(var i = parsed.length; i > x; i--) {
+        $("#space" + i).remove();
+      }
+    }
+    $('.row').not(':has(.col-md-4)').remove();
+  }
+
+  $(document).ready(function() {
+    checkNumRows(parsed);
+    for(var i = 0; i < parsed.length; i++) {
+      makeAttr(i);
+      $(".col-md-4").addClass("animated fadeInUp");
+      $(".h3").addClass("animated slideInDown");
+    }
+    makeFormBox();
+      $("#theSearch").click(function(){
+        var searchTerm = $('input').val().toLowerCase();
+        searchTerm = searchTerm.replace(/[^a-z0-9\s]/gi, '');
+        if(searchTerm != '') {
+          if($.isNumeric(searchTerm)) {
+            searchByISBN(parseInt(searchTerm));
+          } else {
+            searchByTitle(searchTerm);
+          }
+          checkedClear = false;
+        }
+        setInterval(seeIfClear, 250);
+      });
+      $("#theInput").keyup(function(event){
+        var searchTerm = $('input').val().toLowerCase();
+        if(searchTerm !== '') {
+          if(event.keyCode === 13){
+            $("#theSearch").click();
+          }
+        }
+        if(event.keyCode === 27) {
+          $('input').val('');
+          seeIfClear();
+        }
+      });
+  });
+</script>
+
+<div class="searchStuff text-center">
+    <h1 class="title">
+      <a href="http://www.frugalbook.io/">
+        <img class = "frugalIcon" src = "static/favicon_Final.png">
+        FrugalBook
+      </a>
+    </h1>
+  <input id = "theInput" class="searchBar" type="text" placeholder="Enter a Textbook Title or ISBN">
+  <button id = "theSearch" class="button text-center" type="button">Search</button>
+  <h2 class = "moneyCounter"></h2>
+</div>
+<div class="container-fluid text-center"></div>
+<div class = "text-center contactSection"></div>

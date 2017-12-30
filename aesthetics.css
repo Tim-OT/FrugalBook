@@ -1,0 +1,180 @@
+body{
+  background-color: white;
+  font-family: 'Open Sans', sans-serif;
+  color: #3967AD;
+}
+
+h4, h5{
+  color: #3967AD;
+  font-size: 175%;
+}
+
+.frugalIcon{
+  max-width: 40px;
+  max-height: 60px;
+}
+
+.container-fluid{
+  margin-top: 5px;
+  padding-right: 12px;
+  padding-left: 12px;
+  padding-bottom: 10px;
+  max-width: 1000px;
+  background-color: white;
+  min-height: 52.5%;
+}
+
+.title{
+  padding: 0px;
+  padding-bottom: 10px;
+  padding-top: 20px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  max-width: 100%;
+  font-size: 200%;
+  background-color: #C6DEF2;
+}
+
+.moneyCounter{
+  padding-bottom: 0px;
+  padding-top: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  max-width: 100%;
+  font-size: 100%;
+  background-color: #C6DEF2;
+}
+
+.searchBar{
+  width: 50%;
+  font-size: 12.25px;
+  padding: 10px;
+}
+
+.searchStuff{
+  background-color: #C6DEF2;
+  padding-bottom: 10px;
+}
+
+.displaySamples{
+  font-size: 150%;
+  padding-top: 10px;
+}
+
+.textbookImage{
+  max-width: 250px;
+  height: 300px;
+  border-style: solid;
+  border-width: 1.25px;
+}
+
+.textBookInfo{
+  font-size: 150%;
+  line-height:normal;
+  padding-top: 10px;
+  max-width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.row{
+  margin-top: 40px;
+  max-width: 1000px;
+}
+
+.button {
+    background-color: #3967AD;
+    border: 2px solid #3967AD;
+    color: white;
+    padding: 8px;
+    margin-bottom: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.5s;
+}
+
+.button:hover{
+  background-color: white;
+  color: #3967AD;
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideInDown {
+  animation-name: slideInDown;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.fadeInUp {
+  animation-name: fadeInUp;
+}
+
+.contactSection{
+  background-color: #C6DEF2;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+form{
+  margin-bottom: 0px;
+}
+
+.emailBox{
+  width: 40%;
+  padding: 5px;
+}
+
+.messageBox{
+  width: 40.5%;
+  padding: 5px;
+  height: 10%;
+}
+
+a:hover{
+  text-decoration: none;
+  color: black;
+}
