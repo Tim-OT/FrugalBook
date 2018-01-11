@@ -188,6 +188,7 @@
         $(".row").remove();
         $("h5").remove();
         $(".col-md-4").remove();
+         $(".contactSection").remove();
         $('#theSearch').prop('disabled', false);
         checkNumRows(parsed);
         for(var i = 0; i < parsed.length; i++) {
@@ -196,6 +197,7 @@
           $(".h3").addClass("animated slideInDown");
           checkedClear = true;
         }
+        makeFormBox();
       }
     }, 200);
   }
@@ -225,6 +227,8 @@
       i++;
     }
     removeSpaces(numMatch);
+    $(".contactSection").remove();
+    makeFormBox();
   }
 
   function searchByTitle(x) {
@@ -241,6 +245,8 @@
     }
     addMatchedSpaces(numMatch, matchedTitles);
     removeSpaces(numMatch);
+    $(".contactSection").remove();
+    makeFormBox();
   }
 
   function addMatchedSpaces(x, y) {
