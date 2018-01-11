@@ -188,7 +188,8 @@
         $(".row").remove();
         $("h5").remove();
         $(".col-md-4").remove();
-         $(".contactSection").remove();
+        $(".contactSection").remove();
+        $("<div class = 'text-center contactSection'></div>").appendTo("body");
         $('#theSearch').prop('disabled', false);
         checkNumRows(parsed);
         for(var i = 0; i < parsed.length; i++) {
@@ -228,6 +229,7 @@
     }
     removeSpaces(numMatch);
     $(".contactSection").remove();
+    $("<div class = 'text-center contactSection'></div>").appendTo("body");
     makeFormBox();
   }
 
@@ -246,6 +248,7 @@
     addMatchedSpaces(numMatch, matchedTitles);
     removeSpaces(numMatch);
     $(".contactSection").remove();
+    $("<div class = 'text-center contactSection'></div>").appendTo("body");
     makeFormBox();
   }
 
