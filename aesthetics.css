@@ -155,7 +155,9 @@ h4, h5{
 .contactSection{
   background-color: #C6DEF2;
   position: relative;
-  bottom: 0;
+  bottom: 0px;
+  padding: 0px;
+  margin: 0px;
   width: 100%;
 }
 
