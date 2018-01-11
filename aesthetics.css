@@ -2,6 +2,10 @@ body{
   background-color: white;
   font-family: 'Open Sans', sans-serif;
   color: #3967AD;
+  min-height: 100%;
+  position: relative;
+  margin: 0;
+  padding: 0;
 }
 
 h4, h5{
@@ -21,7 +25,7 @@ h4, h5{
   padding-bottom: 10px;
   max-width: 1000px;
   background-color: white;
-  min-height: 52.5%;
+  min-height: 418px;
 }
 
 .title{
@@ -155,9 +159,9 @@ h4, h5{
 .contactSection{
   background-color: #C6DEF2;
   position: relative;
-  bottom: 0px;
-  padding: 0px;
-  margin: 0px;
+  right: 0;
+  bottom: 0;
+  left: 0;
   width: 100%;
 }
 
