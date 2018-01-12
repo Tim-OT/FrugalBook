@@ -112,7 +112,10 @@
   {"_id":"59d67705734d1d08b4e6bcd3","Title":"Modern Mathematical Statistics with Applications","ISBN":"9781461403906","imageURL":"https://images-na.ssl-images-amazon.com/images/I/41y85TGbiBL._SX359_BO1,204,203,200_.jpg","PDFLink":"https://libgen.pw/item/adv/5a1f04e53a044650f507b058"},
   {"_id":"59e249db734d1d1c37fc7e27","Title":"Discrete Mathematics with Ducks","ISBN":"9781466504998","imageURL":"https://images.tandf.co.uk/common/jackets/amazon/978146650/9781466504998.jpg","PDFLink":"http://b-ok.org/book/2333764/a8321b"},
   {"_id":"59e250db734d1d1c37fc7e272","Title":"Engineering Mechanics: Dynamics","ISBN":"9781119248583","imageURL":"https://images-na.ssl-images-amazon.com/images/I/51LYo4zow5L._SX379_BO1,204,203,200_.jpg","PDFLink":"https://libgen.pw/item/adv/5a1f05a03a044650f5133fe1"},
-  {"_id":"59e251db734d1d1c37fc7e228","Title":"Environmental Economics and Management: Theory, Policy, and Applications","ISBN":"9781111826673","imageURL":"https://pictures.abebooks.com/isbn/9781111826673-us.jpg","PDFLink":"http://b-ok.org/book/2583176/7cff31"}
+  {"_id":"59e251db734d1d1c37fc7e228","Title":"Environmental Economics and Management: Theory, Policy, and Applications","ISBN":"9781111826673","imageURL":"https://pictures.abebooks.com/isbn/9781111826673-us.jpg","PDFLink":"http://b-ok.org/book/2583176/7cff31"},
+  {"_id":"59e252db734d1d1c37fc7e229","Title":"Managerial Economics","ISBN":"9780324588866","imageURL":"https://images-na.ssl-images-amazon.com/images/I/51nVXTBEhvL._SX388_BO1,204,203,200_.jpg","PDFLink":"https://libgen.pw/item/adv/5a1f05a03a044650f513494d"},
+  {"_id":"59e253db734d1d1c37fc7e230","Title":"Statistics: The Art and Science of Learning From Data","ISBN":"9780321997838","imageURL":"https://pictures.abebooks.com/BOOKSTORE99/md/md22498925989.jpg","PDFLink":"https://libgen.pw/item/adv/5a1f05a03a044650f5133d29"},
+  {"_id":"59e253db734d1d1c37fc7e230","Title":"Statistics: The Art and Science of Learning From Data","ISBN":"9780321997838","imageURL":"https://pictures.abebooks.com/BOOKSTORE99/md/md22498925989.jpg","PDFLink":"https://libgen.pw/item/adv/5a1f05a03a044650f5133d29"},   
   ];
 
   var checkedClear = false;
@@ -191,7 +194,7 @@
         $("h5").remove();
         $(".col-md-4").remove();
         $(".contactSection").remove();
-        $("<div class = 'text-center contactSection'></div>").appendTo("body");
+        $("<footer class = 'text-center contactSection'></footer>").appendTo(".wrapper");
         $('#theSearch').prop('disabled', false);
         checkNumRows(parsed);
         for(var i = 0; i < parsed.length; i++) {
@@ -231,7 +234,7 @@
     }
     removeSpaces(numMatch);
     $(".contactSection").remove();
-    $("<div class = 'text-center contactSection'></div>").appendTo("body");
+    $("<footer class = 'text-center contactSection'></footer>").appendTo(".wrapper");
     makeFormBox();
   }
 
@@ -250,7 +253,7 @@
     addMatchedSpaces(numMatch, matchedTitles);
     removeSpaces(numMatch);
     $(".contactSection").remove();
-    $("<div class = 'text-center contactSection'></div>").appendTo("body");
+    $("<footer class = 'text-center contactSection'></footer>").appendTo(".wrapper");
     makeFormBox();
   }
 
