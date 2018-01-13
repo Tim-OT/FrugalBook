@@ -9,7 +9,12 @@ body{
   padding: 0;
 }
 
-h4, h5{
+h4{
+  color: #3967AD;
+  font-size: 175%;
+}
+
+.noneAvailable{
   color: #3967AD;
   font-size: 175%;
 }
