@@ -300,6 +300,9 @@
       $(".row").remove();
       $(".container-fluid").append("<h5 class='noneAvailable'>Oops! We couldn't find that title. Try again or press esc.</h5>");
       $("#theSearch").prop('disabled', true);
+    } else if(x == 0 && ($(".container-fluid").not(':has(.noneAvailable)')).length == 0) {
+      $(".row").remove();
+      $("#theSearch").prop('disabled', true); 
     } else {
       $(".noneAvailable").remove();
       for(var i = parsed.length; i > x; i--) {
